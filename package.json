@@ -1,21 +1,17 @@
 {
-  "name": "friendzi",
+  "name": "friendzi-server",
+  "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "expo start",
-    "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "test": "jest --watchAll",
-    "lint": "expo lint",
+    "start": "node server.js",
     "server": "nodemon server.js",
-    "dev": "concurrently \"expo start\" \"nodemon server/server.js\""
+    "dev": "nodemon server.js",
+    "db:init": "node scripts/initDb.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Backend API for FriendZi social network",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",

@@ -69,8 +69,8 @@ const User = sequelize.define('User', {
 });
 
 // Méthode pour vérifier le mot de passe
-User.prototype.checkPassword = async function(password) {
-  return await bcrypt.compare(password, this.password);
+User.prototype.checkPassword = async function(candidatePassword) {
+    return this.password === candidatePassword;
 };
 
 module.exports = User;
